@@ -39,9 +39,9 @@ int main(int argc, char **argv) {
     while((c = fgetc(input)) != EOF){
         if(subadd){
             if(48 <= c && c <= 57)
-                c = ((c - 48) + subadd * (key[k] - 48)) % 10 + 48;
+                c = (((c - 48) + subadd * (key[k] - 48)) + 10) % 10 + 48;
             else if(65 <= c && c <= 90)
-                c = ((c - 65) + subadd * (key[k] - 48)) % 26 + 65;
+                c = (((c - 65) + subadd * (key[k] - 48)) + 26) % 26 + 65;
             k++;
             if(key[k] == '\0')
                 k = 0;
